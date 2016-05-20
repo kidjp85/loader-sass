@@ -295,3 +295,56 @@
     }
   }
 }
+
+@mixin loader4($iconSize: 1em, $fontSize: 20px, $foregroundColor: #ef6c00, $margin: 100px, $time: 1.3s) {
+  // Variables definition
+  $b: $iconSize;
+
+  // Style
+  color: $foregroundColor;
+  font-size: $fontSize;
+  margin: $margin auto;
+  width: $b;
+  height: $b;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  @include animationType(loader $time infinite linear);
+  @include translateZ(0);
+
+  // Animation keyframes
+  @include keyframes(loader) {
+    0%,
+    100% {
+      box-shadow: 0 -3*$b 0 0.2*$b, 2*$b -2*$b 0 0*$b, 3*$b 0 0 -1*$b, 2*$b 2*$b 0 -1*$b, 0 3*$b 0 -1*$b, -2*$b 2*$b 0 -1*$b, -3*$b 0 0 -1*$b, -2*$b -2*$b 0 0;
+    }
+
+    12.5% {
+      box-shadow: 0 -3*$b 0 0, 2*$b -2*$b 0 0.2*$b, 3*$b 0 0 0, 2*$b 2*$b 0 -1*$b, 0 3*$b 0 -1*$b, -2*$b 2*$b 0 -1*$b, -3*$b 0 0 -1*$b, -2*$b -2*$b 0 -1*$b;
+    }
+
+    25% {
+      box-shadow: 0 -3*$b 0 -0.5*$b, 2*$b -2*$b 0 0, 3*$b 0 0 0.2*$b, 2*$b 2*$b 0 0, 0 3*$b 0 -1*$b, -2*$b 2*$b 0 -1*$b, -3*$b 0 0 -1*$b, -2*$b -2*$b 0 -1*$b;
+    }
+
+    37.5% {
+      box-shadow: 0 -3*$b 0 -1*$b, 2*$b -2*$b 0 -1*$b, 3*$b 0*$b 0 0, 2*$b 2*$b 0 0.2*$b, 0 3*$b 0 0*$b, -2*$b 2*$b 0 -1*$b, -3*$b 0*$b 0 -1*$b, -2*$b -2*$b 0 -1*$b;
+    }
+
+    50% {
+      box-shadow: 0 -3*$b 0 -1*$b, 2*$b -2*$b 0 -1*$b, 3*$b 0 0 -1*$b, 2*$b 2*$b 0 0*$b, 0 3*$b 0 0.2*$b, -2*$b 2*$b 0 0, -3*$b 0*$b 0 -1*$b, -2*$b -2*$b 0 -1*$b;
+    }
+
+    62.5% {
+      box-shadow: 0 -3*$b 0 -1*$b, 2*$b -2*$b 0 -1*$b, 3*$b 0 0 -1*$b, 2*$b 2*$b 0 -1*$b, 0 3*$b 0 0, -2*$b 2*$b 0 0.2*$b, -3*$b 0 0 0, -2*$b -2*$b 0 -1*$b;
+    }
+
+    75% {
+      box-shadow: 0*$b -3*$b 0 -1*$b, 2*$b -2*$b 0 -1*$b, 3*$b 0*$b 0 -1*$b, 2*$b 2*$b 0 -1*$b, 0 3*$b 0 -1*$b, -2*$b 2*$b 0 0, -3*$b 0*$b 0 0.2*$b, -2*$b -2*$b 0 0;
+    }
+
+    87.5% {
+      box-shadow: 0*$b -3*$b 0 0, 2*$b -2*$b 0 -1*$b, 3*$b 0 0 -1*$b, 2*$b 2*$b 0 -1*$b, 0 3*$b 0 -1*$b, -2*$b 2*$b 0 0, -3*$b 0*$b 0 0, -2*$b -2*$b 0 0.2*$b;
+    }
+  }
+}
