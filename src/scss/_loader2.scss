@@ -1,0 +1,71 @@
+@import 'base';
+
+//transform origin
+@mixin transform-origin($origin) {
+  -moz-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+@mixin loader2($iconSize: 1em, $fontSize: 1em, $backgroundColor: #fff, $foregroundColor: #ef6c00, $margin: 0, $time: 2s) {
+  // Variables definition
+  $b: 10 * $iconSize;
+  $w: 5.2 * $iconSize;
+  $h: 10.2 * $iconSize;
+  $t: -0.1 * $iconSize;
+  $l1: -0.1 * $iconSize;
+  $l2: 5.1 * $iconSize;
+  $s: $iconSize;
+
+  // Style
+  @include common;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 $s;
+  color: $foregroundColor;
+  font-size: $fontSize;
+  margin: $margin auto;
+  width: $b;
+  height: $b;
+  @include translateZ(0);
+
+  &:before, &:after {
+    border-radius: 50%;
+  }
+  &:before, &:after {
+    position: absolute;
+    content: '';
+  }
+  &:before {
+    width: $w;
+    height: $h;
+    background: $backgroundColor;
+    border-radius: $h 0 0 $h;
+    top: $t;
+    left: $l1;
+    @include transform-origin($w $w);
+    @include animationType(loader2 $time infinite ease 1.5s)
+  }
+
+  &:after {
+    width: $w;
+    height: $h;
+    background: $backgroundColor;
+    border-radius: 0 $h $h 0;
+    top: $t;
+    left: $l2;
+    @include transform-origin(0px $w);
+    @include animationType(loader2 $time infinite ease);
+  }
+
+  // Animation keyframes
+  @include keyframes(loader2) {
+    0% {
+      @include rotate(0);
+    }
+    100% {
+      @include rotate(360);
+    }
+  }
+}

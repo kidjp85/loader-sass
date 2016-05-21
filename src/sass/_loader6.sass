@@ -1,0 +1,34 @@
+@import base
+
+=loader6($iconSize: 1em, $fontSize: 90px, $foregroundColor: #ef6c00, $margin: 0px, $time: 1.7s)
+  // Variables definition
+  $b: $iconSize
+  // Style
+  +common
+  color: $foregroundColor
+  font-size: $fontSize
+  overflow: hidden
+  width: $b
+  height: $b
+  border-radius: 50%
+  margin: $margin auto
+  +animationType(loader6 $time infinite ease)
+  +translateZ(0)
+  // Animation keyframes
+  +keyframes(loader6)
+    0%
+      +rotate(0)
+      box-shadow: 0 -0.83 * $b 0 -0.4 * $b, 0 -0.83 * $b 0 -0.42 * $b, 0 -0.83 * $b 0 -0.44 * $b, 0 -0.83 * $b 0 -0.46 * $b, 0 -0.83 * $b 0 -0.477 * $b
+    5%,
+    95%
+      box-shadow: 0 -0.83 * $b 0 -0.4 * $b, 0 -0.83 * $b 0 -0.42 * $b, 0 -0.83 * $b 0 -0.44 * $b, 0 -0.83 * $b 0 -0.46 * $b, 0 -0.83 * $b 0 -0.477 * $b
+    10%,
+    59%
+      box-shadow: 0 -0.83 * $b 0 -0.4 * $b, -0.087 * $b -0.825 * $b 0 -0.42 * $b, -0.173 * $b -0.812 * $b 0 -0.44 * $b, -0.256 * $b -0.789 * $b 0 -0.46 * $b, -0.297 * $b -0.775 * $b 0 -0.477 * $b
+    20%
+      box-shadow: 0 -0.83 * $b 0 -0.4 * $b, -0.338 * $b -0.758 * $b 0 -0.42 * $b, -0.555 * $b -0.617 * $b 0 -0.44 * $b, -0.671 * $b -0.488 * $b 0 -0.46 * $b, -0.749 * $b -0.34 * $b 0 -0.477 * $b
+    38%
+      box-shadow: 0 -0.83 * $b 0 -0.4 * $b, -0.377 * $b -0.74 * $b 0 -0.42 * $b, -0.645 * $b -0.522 * $b 0 -0.44 * $b, -0.775 * $b -0.297 * $b 0 -0.46 * $b, -0.82 * $b -0.09 * $b 0 -0.477 * $b
+    100%
+      +rotate(360)
+      box-shadow: 0 -0.83 * $b 0 -0.4 * $b, 0 -0.83 * $b 0 -0.42 * $b, 0 -0.83 * $b 0 -0.44 * $b, 0 -0.83 * $b 0 -0.46 * $b, 0 -0.83 * $b 0 -0.477 * $b
