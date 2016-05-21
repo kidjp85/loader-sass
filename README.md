@@ -12,7 +12,7 @@ Spinner's size, font-size, color are can easily changed by setting the input par
 **For .sass file**
 ```css
 .loader-icon
-  +loader1  //Default params for loader1($iconSize: 1em, $fontSize: 1em, $foregroundColor: #ef6c00, $time: 1s)
+  +loader1  //Default params for loader1($iconSize: 1em, $fontSize: 1em, $foregroundColor: #ef6c00, $margin:0, $time: 1s)
 ```
 
 
@@ -20,7 +20,7 @@ Spinner's size, font-size, color are can easily changed by setting the input par
 
 ```css
 .loader-icon {
-    @include loader1
+  @include loader1
 }
 ```
 
@@ -28,7 +28,7 @@ Spinner's size, font-size, color are can easily changed by setting the input par
 
 ```css
 .loader-icon
-  +loader1(2em, 2em, #ccc, .9s)
+  +loader1(2em, 2em, #ccc, 5px, .9s)
 ```
 
 
@@ -36,7 +36,7 @@ Spinner's size, font-size, color are can easily changed by setting the input par
 
 ```css
 .loader-icon {
-    @include loader1(2em, 2em, #ccc, .9s)
+  @include loader1(2em, 2em, #ccc, 5px, .9s)
 }
 ```
 

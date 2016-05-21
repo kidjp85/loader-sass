@@ -8,7 +8,7 @@
   animation-delay: #{$sec}s;
 }
 
-@mixin loader1($iconSize: 1em, $fontSize: 1em, $foregroundColor: #ef6c00, $time: 1s) {
+@mixin loader1($iconSize: 1em, $fontSize: 1em, $foregroundColor: #ef6c00, $margin: 0, $time: 1s) {
   // Variables definition
   $w: $iconSize;
   $h1: 4 * $iconSize;
@@ -24,7 +24,7 @@
   height: $h1;
   color: $foregroundColor;
   font-size: $fontSize;
-  margin: 0 auto;
+  margin: $margin auto;
 
   @include animationType(loader1 $time infinite ease-in-out);
   @include translateZ(0) ;
