@@ -1,0 +1,51 @@
+//define animation type
+=animationType($arg...)
+  -webkit-animation: $arg
+  -moz-animation: $arg
+  -ms-animation: $arg
+  -o-animation: $arg
+  animation: $arg
+
+//define keyframes
+=keyframes($animation-name)
+  @-webkit-keyframes #{$animation-name}
+    @content
+
+  @-moz-keyframes #{$animation-name}
+    @content
+
+  @-ms-keyframes #{$animation-name}
+    @content
+
+  @-o-keyframes #{$animation-name}
+    @content
+
+  @keyframes #{$animation-name}
+    @content
+
+//transform
+=transform($transforms)
+  -moz-transform: $transforms
+  -o-transform: $transforms
+  -ms-transform: $transforms
+  -webkit-transform: $transforms
+  transform: $transforms
+
+// rotate
+=rotate($deg)
+  +transform(rotate(#{$deg}deg))
+
+// translate
+=translate($x, $y, $z)
+  +transform(translate($x, $y, $z))
+
+// translateZ
+=translateZ($z)
+  +translate(0, 0, $z)
+
+// common path
+=common
+  display: inline-block
+  vertical-align: middle
+  text-indent: -9999em
+  position: relative

@@ -1,0 +1,51 @@
+@import base
+
+=animationFillMode($mode)
+  -moz-animation-fill-mode: $mode
+  -ms-animation-fill-mode: $mode
+  -o-animation-fill-mode: $mode
+  -webkit-animation-fill-mode: $mode
+  animation-fill-mode: $mode
+
+=loader7($iconSize: 1em, $fontSize: 10px, $foregroundColor: #ef6c00, $margin: 0px, $time: 1.8s)
+  // Variables definition
+  $b: 2.5 * $iconSize
+  $l1: -3.5 * $iconSize
+  $l2: 3.5 * $iconSize
+  $s1: 2.5 * $iconSize
+  $s2: -1.3 * $iconSize
+  // Style
+  +common
+  border-radius: 50%
+  width: $b
+  height: $b
+  +animationFillMode(both)
+  +animationType(loader7 $time infinite ease-in-out)
+  color: $foregroundColor
+  font-size: $fontSize
+  margin: $margin auto
+  +translateZ(0)
+  +animationDelay(-0.16)
+  &:before, &:after
+    border-radius: 50%
+    width: $b
+    height: $b
+    +animationFillMode(both)
+    +animationType(loader7 $time infinite ease-in-out)
+  &:before
+    left: $l1
+    +animationDelay(-0.32)
+  &:after
+    left: $l2
+  &:before, &:after
+    content: ''
+    position: absolute
+    top: 0
+  // Animation keyframe
+  +keyframes(loader7)
+    0%,
+    80%,
+    100%
+      box-shadow: 0 $s1 0 $s2
+    40%
+      box-shadow: 0 $s1 0 0

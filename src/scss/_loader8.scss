@@ -1,0 +1,36 @@
+@import 'base';
+
+@mixin loader8($iconSize: 1em, $fontSize: 10px, $foregroundColor: #ef6c00, $margin: 0, $time: 1.1s) {
+  // Variables definition
+  $b: 10 * $iconSize;
+
+  // Style
+  @include common;
+  margin: $margin auto;
+  font-size: $fontSize;
+  border-top: 1.1em solid rgba($foregroundColor, 0.2);
+  border-right: 1.1em solid rgba($foregroundColor, 0.2);
+  border-bottom: 1.1em solid rgba($foregroundColor, 0.2);
+  border-left: 1.1em solid $foregroundColor;
+  @include translateZ(0);
+  @include animationType(loader8 $time infinite linear);
+  border-radius: 50%;
+  width: $b;
+  height: $b;
+  &:after {
+    border-radius: 50%;
+    width: $b;
+    height: $b;
+  }
+
+  // Animation keyframe
+  @include keyframes(loader8) {
+    0% {
+      @include rotate(0);
+    }
+
+    100% {
+      @include rotate(360);
+    }
+  }
+}

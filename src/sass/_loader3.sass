@@ -1,0 +1,49 @@
+@import base
+
+=linearGradientB($args...)
+  background: -o-linear-gradient($args)
+  background: -moz-linear-gradient($args)
+  background: -webkit-linear-gradient($args)
+  background: linear-gradient($args)
+
+=loader3($iconSize: 1em, $fontSize: 1em, $backgroundColor: #fff, $foregroundColor: #ef6c00, $margin: 0, $time: 1.4s)
+  // Variables definition
+  $b: 10 * $iconSize
+  // Style
+  +common
+  font-size: $fontSize
+  margin: $margin auto
+  width: $b
+  height: $b
+  border-radius: 50%
+  background: $foregroundColor
+  +linearGradientB(left, rgba($foregroundColor, 100%) 10%, rgba($foregroundColor, 0%) 42%)
+  +animationType(loader3 $time infinite linear)
+  +translateZ(0)
+  &:before
+    width: 50%
+    height: 50%
+    background: $foregroundColor
+    border-radius: 100% 0 0 0
+    position: absolute
+    top: 0
+    left: 0
+    content: ''
+  &:after
+    background: $backgroundColor
+    width: 75%
+    height: 75%
+    border-radius: 50%
+    content: ''
+    margin: auto
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+  // Animation keyframe
+  +keyframes(loader3)
+    0%
+      +rotate(0)
+    100%
+      +rotate(360)
